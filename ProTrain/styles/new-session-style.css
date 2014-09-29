@@ -1,0 +1,63 @@
+.topic {
+    border-bottom: solid 1px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#end-button, #start-button{
+    padding:20px 70px 20px 70px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.unit{
+    display:inline;
+   float:right;
+   margin-top:5px;
+}
+
+.info-holder{
+     border-bottom: solid 1px;
+}
+
+#end-button{
+    display:none;
+    margin-top:15px;
+    margin-left:50px;
+}
+
+.km-android #start-button{
+    margin-left:50px;
+}
+
+.session-prop {  
+    padding: 5px;
+    font-size: 35px;
+    display:inline-block;
+}
+
+.km-android .topic {
+    font-weight: normal;
+    border-color: #666666;
+}
+
+.km-android .info-holder, .session-prop{
+     border-color: #666666;
+}
+
+.km-wp #end-button, #start-button{
+    margin-left: 80px;
+    margin-top:15px;
+}
+
+.km-wp .session-prop{
+    font-weight:bold;
+}
+
+.km-wp .topic{
+    font-size:25px;
+}

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}") = "ProRun", "ProTrain\ProRun.iceproj", "{10AFC0FB-ACE5-427D-8686-4128571570AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10AFC0FB-ACE5-427D-8686-4128571570AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10AFC0FB-ACE5-427D-8686-4128571570AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10AFC0FB-ACE5-427D-8686-4128571570AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10AFC0FB-ACE5-427D-8686-4128571570AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

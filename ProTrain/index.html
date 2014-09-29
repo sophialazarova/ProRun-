@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/new-session-style.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
+
+   
+
+</head>
+<body>
+ 
+    <div data-role="layout" data-id="main">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+
+        <!-- application views will be rendered here -->
+        
+        <div data-role="footer">
+            <div data-role="tabstrip">
+                <a href="views/new-session.html" data-icon="add">New Session</a>   
+                <a href="views/my-sessions.html" data-icon="bookmarks">My Sessions</a>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/unit-utils.js"></script>
+    <script src="scripts/stopwatch.js"></script>
+    <script src="scripts/new-sesssion.js"></script>
+    <script src="scripts/position.js"></script>
+    <script src="scripts/distance-calculator.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

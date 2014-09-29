@@ -1,0 +1,23 @@
+<div data-role="view" data-layout="main" data-model="app.new.newSession">
+    <h1>New Session</h1>
+
+    <div class="topic">Distance</div>
+    <div class="info-holder">
+        <div class="session-prop" id="distance-holder">0.000</div>
+        <span class="unit">km</span>
+    </div>
+
+    <div class="topic">Time Elapsed</div>
+
+    <div class="info-holder">
+        <div class="session-prop" id="stopwatch">00:00:00</div>
+    </div>
+
+    <div class="topic">Speed</div>
+    <div class="info-holder">
+        <div class="session-prop" id="speed">0.000</div>
+        <span class="unit">km/h</span>
+    </div>
+    <button id="start-button" class="command-button"  data-role="button" data-bind="events: {click: startSession}">Start</button>
+    <button  id="end-button" data-role="button"  class="command-button" data-bind="events: {click: endSession}">Stop</button>
+</div>
