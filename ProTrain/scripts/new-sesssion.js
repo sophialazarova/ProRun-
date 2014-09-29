@@ -7,10 +7,11 @@ app.new = app.new || {};
     'use strict';
     var currentPosition, oldPosition;
     var totalDistance = 0;
+    var result;
 
     scope.newSession = kendo.observable({
         startSession: function () {
-            
+
             var distanceHolder = document.getElementById('distance-holder');
             var timeHolder = document.getElementById('stopwatch');
             var buttonStart = document.getElementById('start-button');
@@ -20,15 +21,35 @@ app.new = app.new || {};
             buttonStop.style.display = 'inline';
             var id = stopwatch.start(timeHolder);
             manageDistance(distanceHolder, speed);
- 
+
         },
         endSession: function () {
             var time = stopwatch.stop();
+            navigator.geolocation.clearWatch(result);
             var timeInHours = utils.getTimeInHours(time);
             var avgSpeed = totalDistance / timeInHours;
             var date = new Date();
-        }
 
+            var sessionDataSource = new kendo.data.DataSource({
+                type: 'everlive',
+                transport: {
+                    typeName: 'Session'
+                },
+                schema: {
+                    model: { id: Everlive.idField }
+                }
+            });
+
+            var sessionItemToAdd = {
+                'Time': time,
+                'Speed': avgSpeed,
+                'Date': date,
+                'Distance': totalDistance
+            };
+
+           // sessionDataSource.add(sessionItemToAdd);
+           // sessionDataSource.sync();
+        }
     });
 
     function manageDistance(distanceHolder, speedHolder) {
@@ -36,7 +57,7 @@ app.new = app.new || {};
                 function (success) {
                     oldPosition = new PositionCreator.Position(success.coords.latitude, success.coords.longitude);
                     currentPosition = oldPosition;
-                     var result = navigator.geolocation.watchPosition(
+                     result = navigator.geolocation.watchPosition(
             function (success) {
                 oldPosition = currentPosition;
                 currentPosition = new PositionCreator.Position(success.coords.latitude, success.coords.longitude);

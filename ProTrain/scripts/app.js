@@ -4,7 +4,7 @@
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app;
-    var everlive = new Everlive("YOUR API KEY");
+    var everlive = new Everlive("tLFppRYFPl70CjCP");
 
     // create an object to store the models for each view
 
