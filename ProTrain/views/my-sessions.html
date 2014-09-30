@@ -1,4 +1,8 @@
-<div data-role="view" data-layout="main" >
+<div data-role="view" data-layout="main" id="flat" data-show="app.mySessions.sessions">
     <h1>My Sessions</h1>
-</div>
+    <ul data-role="listview"
+         data-style="inset"
+        data-bind="source: todos"
+        data-template="todo-item-template"></ul>
 
+</div>

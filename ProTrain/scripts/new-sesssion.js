@@ -1,3 +1,4 @@
+
 /* global kendo, window */
 
 var app = app || {};
@@ -9,7 +10,9 @@ app.new = app.new || {};
     var totalDistance = 0;
     var result;
 
+
     scope.newSession = kendo.observable({
+
         startSession: function () {
 
             var distanceHolder = document.getElementById('distance-holder');
@@ -24,11 +27,20 @@ app.new = app.new || {};
 
         },
         endSession: function () {
+            var distanceHolder = document.getElementById('distance-holder');
+            var timeHolder = document.getElementById('stopwatch');
+            var buttonStart = document.getElementById('start-button');
+            var buttonStop = document.getElementById('end-button');
+            var speed = document.getElementById('speed');
             var time = stopwatch.stop();
             navigator.geolocation.clearWatch(result);
             var timeInHours = utils.getTimeInHours(time);
             var avgSpeed = totalDistance / timeInHours;
             var date = new Date();
+            var str = date.toUTCString();
+            navigator.notification.alert("Session is saved!", reset(speed, distanceHolder, timeHolder), "Session ended", "Ok");
+            buttonStart.style.display = 'inline';
+            buttonStop.style.display = 'none';
 
             var sessionDataSource = new kendo.data.DataSource({
                 type: 'everlive',
@@ -41,9 +53,9 @@ app.new = app.new || {};
             });
 
             var sessionItemToAdd = {
-                'Time': time,
+                'Time': timeInHours,
                 'Speed': avgSpeed,
-                'Date': date,
+                'Date': str,
                 'Distance': totalDistance
             };
 
@@ -51,6 +63,12 @@ app.new = app.new || {};
            // sessionDataSource.sync();
         }
     });
+
+    function reset(speedHolder, distanceHolder, timeHolder) {
+        distanceHolder.innerText = "0.000";
+        timeHolder.innerText = "00:00:00";
+        speedHolder.innerText = "0.000";
+    }
 
     function manageDistance(distanceHolder, speedHolder) {
         navigator.geolocation.getCurrentPosition(

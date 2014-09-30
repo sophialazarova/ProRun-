@@ -6,6 +6,7 @@
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
     <link href="styles/new-session-style.css" rel="stylesheet" />
+    <link href="styles/my-sessions-style.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
@@ -16,6 +17,11 @@
 
 </head>
 <body>
+
+    <script type="text/x-kendo-template"
+            id="todo-item-template">
+        <li data-bind = "click: alert"><a>#: Date #</a></li>
+    </script>
  
     <div data-role="layout" data-id="main">
         <div data-role="header">
@@ -36,6 +42,7 @@
     <script src="scripts/unit-utils.js"></script>
     <script src="scripts/stopwatch.js"></script>
     <script src="scripts/new-sesssion.js"></script>
+    <script src="scripts/my-sessions.js"></script>
     <script src="scripts/position.js"></script>
     <script src="scripts/distance-calculator.js"></script>
     <script src="scripts/app.js"></script>

@@ -70,6 +70,7 @@
     <Content Include="kendo\typescript\kendo.mobile.d.ts" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\distance-calculator.js" />
+    <Content Include="scripts\my-sessions.js" />
     <Content Include="scripts\new-sesssion.js" />
     <Content Include="scripts\position.js" />
     <Content Include="scripts\session.js" />
@@ -90,6 +91,7 @@
     <Content Include="styles\images\search_active2x.png" />
     <Content Include="styles\images\sprite-weather.png" />
     <Content Include="styles\images\sprite-weather2x.png" />
+    <Content Include="styles\my-sessions-style.css" />
     <Content Include="styles\new-session-style.css" />
     <Content Include="views\my-sessions.html" />
     <Content Include="views\new-session.html" />
