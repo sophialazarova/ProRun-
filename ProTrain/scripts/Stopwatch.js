@@ -50,6 +50,9 @@ var stopwatch = (function () {
 
     function stop() {
         clearInterval(id);
+        sec = 0;
+        min = 0;
+        hour = 0;
         return time;
     }
 

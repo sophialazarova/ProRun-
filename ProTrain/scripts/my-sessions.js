@@ -12,7 +12,9 @@ app.mySessions = app.mySessions || {};
                var vm = kendo.observable({
                    todos: loadTodos(),
                    alert: function (e) {
-                       alert(e.data.Distance);
+                      navigator.notification.alert("Distance: " + e.data.Distance + "\n"
+                           + "Time: " + e.data.TimeToShow + "\n"
+                           + "Average Speed: " + e.data.Speed, function () { }, e.data.Date, "Ok");
                    }
                });
                kendo.bind(e.view.element, vm)

@@ -28,6 +28,7 @@ app.new = app.new || {};
         },
         endSession: function () {
             var distanceHolder = document.getElementById('distance-holder');
+            console.log(distanceHolder);
             var timeHolder = document.getElementById('stopwatch');
             var buttonStart = document.getElementById('start-button');
             var buttonStop = document.getElementById('end-button');
@@ -56,11 +57,12 @@ app.new = app.new || {};
                 'Time': timeInHours,
                 'Speed': avgSpeed,
                 'Date': str,
-                'Distance': totalDistance
+                'Distance': totalDistance,
+                'TimeToShow': time
             };
 
-           // sessionDataSource.add(sessionItemToAdd);
-           // sessionDataSource.sync();
+            //sessionDataSource.add(sessionItemToAdd);
+            //sessionDataSource.sync();
         }
     });
 
@@ -85,7 +87,7 @@ app.new = app.new || {};
                 distanceHolder.innerText = parseFloat(totalDistance).toFixed(3);
             },
             function (error) { console.log(error); },
-            { enableHighAccuracy: true, timeout: 1000 });
+            { enableHighAccuracy: true, timeout: 5000 });
                 },
                 function (error) { console.log(error); },
             { enableHighAccuracy: true });
