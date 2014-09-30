@@ -11,7 +11,6 @@ app.new = app.new || {};
     var result;
     var count = 0;
 
-
     scope.newSession = kendo.observable({
 
         startSession: function () {
@@ -63,8 +62,8 @@ app.new = app.new || {};
                 'TimeToShow': time
             };
 
-            //sessionDataSource.add(sessionItemToAdd);
-            //sessionDataSource.sync();
+            sessionDataSource.add(sessionItemToAdd);
+            sessionDataSource.sync();
         }
     });
 
@@ -97,18 +96,5 @@ app.new = app.new || {};
             console.log(error);
         },
         { enableHighAccuracy: true });
-
-        //          result = navigator.geolocation.watchPosition(
-        // function (success) {
-        //     currentPosition = new PositionCreator.Position(success.coords.latitude, success.coords.longitude);
-        //     console.log(currentPosition._latitude + " " + currentPosition._longitude);
-        //   //  oldPosition = currentPosition;
-        //   //  var distance = distanceCalculator.calculateDistance(oldPosition, currentPosition);
-        //   //  speedHolder.innerText = (distance / (1 / 3600)).toFixed(3);
-        //   //  totalDistance = totalDistance + distance;
-        //   //  distanceHolder.innerText = parseFloat(totalDistance).toFixed(3);
-        // },
-        // function (error) { console.log(error); },
-        // { enableHighAccuracy: true, timeout: 5000 });
     }
 }(app.new));
